@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KN4 - Links</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(270deg, #000, #111, #222, #111, #000);
+      background-size: 1000% 1000%;
+      animation: gradientBG 20s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .profile-img {
+      margin-top: 40px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    h1 {
+      font-size: 48px;
+      margin: 20px 0 5px 0;
+      text-shadow: 0 0 15px #ff0000;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 0 0 30px 0;
+      font-weight: normal;
+      color: #ccc;
+    }
+    .links a {
+      display: block;
+      width: 250px;
+      margin: 10px auto;
+      padding: 12px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.9);
+      color: #000;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+    .links a:hover {
+      background: #ff0000;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255,0,0,0.7);
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Troca o src pela tua foto de perfil -->
+  <img src="img/ff.jpg" alt="Kiamy Neto" class="profile-img">
+
+  <h1>KN4</h1>
+  <h2>Kiamy Neto</h2>
+
+  <div class="links">
+    <a href="https://www.youtube.com/@eukiamyneto4" target="_blank">YouTube</a>
+    <a href="https://www.tiktok.com/@kiamineto?_t=ZN-8zZOUIbGwL8&_r=1" target="_blank">TikTok</a>
+    <a href="https://www.facebook.com/share/1GRsb8Mv8o/?mibextid=wwXIfr" target="_blank">Facebook</a>
+  </div>
+
+  <footer>
+    © 2025 KN4 - Todos os direitos reservados
+  </footer>
+</body>
+</html>
