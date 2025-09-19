@@ -11,13 +11,6 @@
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Meta tags para redes sociais -->
-  <meta property="og:title" content="KN4 - Kiamy Neto" />
-  <meta property="og:description" content="Siga-me nas redes sociais e fique por dentro das novidades!" />
-  <meta property="og:image" content="https://seusite.com/img/ff.jpg" />
-  <meta property="og:url" content="https://seusite.com" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <style>
     /* Reset básico */
     * {
@@ -195,36 +188,31 @@
     © 2025 KN4 - Todos os direitos reservados
   </footer>
 
-  <!-- Áudio de fundo com autoplay -->
-  <audio id="bg-music" src="img/Lil Wayne - Mirror ft. Bruno Mars (Official Music Video) ft. Bruno Mars.mp3" loop autoplay></audio>
+  <!-- Áudio de fundo com autoplay mudo -->
+  <audio id="bg-music" src="img/Lil Wayne - Mirror ft. Bruno Mars (Official Music Video) ft. Bruno Mars.mp3" loop autoplay muted></audio>
 
   <!-- Botão para controlar música -->
-  <button id="music-toggle" aria-label="Tocar música">▶️ Música</button>
+  <button id="music-toggle" aria-label="Ativar música">▶️ Ativar o Som</button>
 
   <script>
     const music = document.getElementById('bg-music');
     const btn = document.getElementById('music-toggle');
 
     btn.addEventListener('click', () => {
-      if (music.paused) {
+      if (music.muted) {
+        music.muted = false;
         music.play();
-        btn.textContent = '⏸️ Pausar';
-        btn.setAttribute('aria-label', 'Pausar música');
-      } else {
+        btn.textContent = '⏸️ Pausar Som';
+        btn.setAttribute('aria-label', 'Pausar Som');
+      } else if (!music.paused) {
         music.pause();
-        btn.textContent = '▶️ Música';
-        btn.setAttribute('aria-label', 'Tocar música');
-      }
-    });
-
-    // Tenta iniciar música automaticamente ao carregar a página
-    window.addEventListener('load', () => {
-      music.play().then(() => {
-        btn.textContent = '⏸️ Pausar';
+        btn.textContent = '▶️ Ativar Som';
+        btn.setAttribute('aria-label', 'Ativar Som');
+      } else {
+        music.play();
+        btn.textContent = '⏸️ Pausar Música';
         btn.setAttribute('aria-label', 'Pausar música');
-      }).catch(() => {
-        // Autoplay bloqueado pelo navegador, usuário deve clicar no botão
-      });
+      }
     });
   </script>
 </body>
