@@ -131,6 +131,29 @@
       user-select: none;
     }
 
+    /* Botão música */
+    #music-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ff0000;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff0000;
+      z-index: 1000;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+
+    #music-toggle:hover {
+      background: #ff4444;
+      box-shadow: 0 0 15px #ff4444;
+    }
+
     /* Responsividade */
     @media (max-width: 400px) {
       h1 {
@@ -171,5 +194,38 @@
   <footer>
     © 2025 KN4 - Todos os direitos reservados
   </footer>
+
+  <!-- Áudio de fundo com autoplay -->
+  <audio id="bg-music" src="img/Lil Wayne - Mirror ft. Bruno Mars (Official Music Video) ft. Bruno Mars.mp3" loop autoplay></audio>
+
+  <!-- Botão para controlar música -->
+  <button id="music-toggle" aria-label="Tocar música">▶️ Música</button>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-toggle');
+
+    btn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = '⏸️ Pausar';
+        btn.setAttribute('aria-label', 'Pausar música');
+      } else {
+        music.pause();
+        btn.textContent = '▶️ Música';
+        btn.setAttribute('aria-label', 'Tocar música');
+      }
+    });
+
+    // Tenta iniciar música automaticamente ao carregar a página
+    window.addEventListener('load', () => {
+      music.play().then(() => {
+        btn.textContent = '⏸️ Pausar';
+        btn.setAttribute('aria-label', 'Pausar música');
+      }).catch(() => {
+        // Autoplay bloqueado pelo navegador, usuário deve clicar no botão
+      });
+    });
+  </script>
 </body>
 </html>
